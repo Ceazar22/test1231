@@ -1,0 +1,121 @@
+{%- doc -%}
+  Renders an "Add to cart" button with dynamic text and state. It shows different text based on whether the product can be added to the cart and provides visual feedback when an item is added.
+
+  @param {boolean} can_add_to_cart - Whether the product can be added to the cart.
+  @param {string} add_to_cart_text - The text to display on the button.
+  @param {object} product - The product object to be added to the cart.
+  @param {boolean} [icon_only_on_mobile] - If `true`, only the icon is shown on mobile devices.
+  @param {string} [class] - Additional CSS classes to apply to the button.
+  @param {string} [id] - The ID attribute for the button.
+  @param {string} [data_testid] - The data-testid attribute for testing.
+{%- enddoc -%}
+
+{%- liquid
+  assign default_add_to_cart_text = 'actions.add_to_cart' | t
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_variant_media = current_variant.featured_media.preview_image | image_url: width: 100
+
+  if current_variant.featured_media.preview_image == blank
+    assign product_variant_media = product.featured_media.preview_image | image_url: width: 100
+  endif
+-%}
+
+<add-to-cart-component
+  ref="addToCartButtonContainer"
+  data-product-variant-media="{{ product_variant_media }}"
+  data-add-to-cart-animation="{{ settings.add_to_cart_animation }}"
+  class="custom-add-to-cart-wrapper"
+>
+  <button
+    {% if id != blank %}
+      id="{{ id }}"
+    {% endif %}
+    type="submit"
+    name="add"
+    ref="addToCartButton"
+    on:click="/handleClick"
+    class="button {{ class }}"
+    {% if data_testid %}
+      data-testid="{{ data_testid }}"
+    {% endif %}
+    {% unless can_add_to_cart %}
+      disabled
+    {% endunless %}
+  >
+    <span class="add-to-cart-text">
+      {% comment %}
+        {% if can_add_to_cart %}
+          <span
+            aria-hidden="true"
+            class="svg-wrapper add-to-cart-icon"
+          >
+            {{- 'icon-add-to-cart.svg' | inline_asset_content -}}
+          </span>
+        {% endif %}
+      {% endcomment %}
+
+      <span class="add-to-cart-text__content{% if icon_only_on_mobile %} is-visually-hidden-mobile{% endif %}">
+        <span class="add-to-cart-text__label">
+          {{- add_to_cart_text | default: default_add_to_cart_text -}}
+        </span>
+
+        {% if current_variant != blank %}
+          <span class="add-to-cart-text__price">
+            {{ current_variant.price | money }}
+          </span>
+        {% endif %}
+      </span>
+    </span>
+
+    <span class="add-to-cart__added">
+      <span class="svg-wrapper add-to-cart__added-icon">
+        {{- 'icon-checkmark-burst.svg' | inline_asset_content -}}
+      </span>
+    </span>
+  </button>
+
+  <div class="custom-add-to-cart-shipping-text">
+    Ships in the <span class="custom-add-to-cart-shipping-text__flag" aria-hidden="true">🇺🇸</span> United States in estimated 6-7 days
+  </div>
+</add-to-cart-component>
+
+{% stylesheet %}
+  .custom-add-to-cart-wrapper {
+    display: block;
+    width: 100%;
+  }
+
+  .add-to-cart-text__content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .add-to-cart-text__price {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .custom-add-to-cart-shipping-text {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center !important;
+
+    color: var(--Old-colors-Scheme-1-Shadow, #9F9F9F) !important;
+
+    /* Old Typography/Paragraph/Regular */
+    font-family: Fustat, sans-serif !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+  }
+
+  .custom-add-to-cart-shipping-text__flag {
+    display: inline-block;
+    margin: 0 2px;
+  }
+{% endstylesheet %}

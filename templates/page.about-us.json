@@ -1,0 +1,270 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "Title",
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
+      }
+    },
+    "hairscripts_about_hero_UeeWLF": {
+      "type": "hairscripts-about-hero",
+      "name": "About - Our Story Hero",
+      "settings": {
+        "heading": "OUR STORY",
+        "lead_text": "Built by someone who's been through it — and trained to fix it.",
+        "description": "HairScripts™ wasn’t created in a boardroom. It was built by a pharmaceutical industry expert who lived the problem, studied the science, and refused to accept that women deserved anything less than a real solution."
+      }
+    },
+    "hairscripts_about_founder_HkGzmj": {
+      "type": "hairscripts-about-founder",
+      "name": "About - Founder Bio",
+      "settings": {
+        "founder_name": "BEVY",
+        "title_1": "Founder, HairScripts™",
+        "title_2": "Pharmaceutical Industry Expert",
+        "title_3": "Certified Hair Loss Practitioner",
+        "bio_text": "<p>Bevy knows what it feels like to lose your hair during one of the hardest seasons of your life. In 2019, she was diagnosed with Androgenic Alopecia and lost nearly 60% of her hair — all while navigating significant health and personal challenges that left little room to slow down.<br/>What set Bevy apart wasn’t just her experience. With over a decade inside the pharmaceutical industry, she already knew how to read clinical data, evaluate formulations, and identify the gap between what a product claims and what the science actually requires. That gap was everywhere.<br/> <br/>Most formulas target one root cause. One. While hormonal hair loss — the kind that accelerates during stress, perimenopause, postpartum, and metabolic shifts — operates across nine simultaneously. HairScripts™ is the one capsule that handles all nine while you handle everything else. You shouldn’t have to become a hair loss expert to stop losing your hair. That’s the whole point.</p>",
+        "founder_image": "shopify://shop_images/Rectangle_513_c951de22-fe57-4ae0-9704-6cfe3877b422.png",
+        "badge_1": "10+ Years Pharmaceutical Industry Experience",
+        "badge_2": "Certified Hair Loss Practitioner",
+        "badge_3": "Active YouTube Educator with a Growing Community",
+        "star_count": 5,
+        "review_text": "Trusted by a growing community of women in the HairScripts family."
+      }
+    },
+    "hairscripts_about_brand_promise_DnqVVb": {
+      "type": "hairscripts-about-brand-promise",
+      "blocks": {
+        "pillar_iPk8y6": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/Biotech.svg",
+            "title": "Biology, Not Trends",
+            "text": "Every ingredient was selected for its documented mechanism at the follicle level. Not its marketing appeal. Not because it photographs well on a label."
+          }
+        },
+        "pillar_gTyRDj": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/Target.svg",
+            "title": "All Nine Pathways",
+            "text": "Nine biological drivers of hormonal hair loss. All addressed simultaneously. Because your biology doesn't work one pathway at a time — and your formula shouldn't either."
+          }
+        },
+        "pillar_LKnUkx": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/Pill_b68d2dc3-77d1-4513-afee-2d6e1ed38c7e.svg",
+            "title": "Full Transparency",
+            "text": "Every ingredient. Every dose. Visible and defensible. No proprietary blends hiding underdosed actives. You deserve to know exactly what you're putting in your body and why."
+          }
+        },
+        "pillar_LJgKgM": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/Scoreboard.svg",
+            "title": "Built for Consistency",
+            "text": "Real follicle recovery takes 90 days minimum. That's biology — not a disclaimer. HairScripts™ compounds over time. It's not built to spike. It's built to last."
+          }
+        },
+        "pillar_ULDBQe": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/Pharma.svg",
+            "title": "Drug-Free. Pharma-Informed.",
+            "text": "Pharmaceutical formulation logic. Zero drugs. Zero prescription side effects. The clinical thinking — accessible, daily, and designed for your biology."
+          }
+        },
+        "pillar_t4dbza": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/Plant.svg",
+            "title": "Confidence Is the Outcome",
+            "text": "This isn't about vanity metrics. It's about giving women back the version of themselves that doesn't have to think about this every morning."
+          }
+        }
+      },
+      "block_order": [
+        "pillar_iPk8y6",
+        "pillar_gTyRDj",
+        "pillar_LKnUkx",
+        "pillar_LJgKgM",
+        "pillar_ULDBQe",
+        "pillar_t4dbza"
+      ],
+      "name": "About - Brand Promise",
+      "settings": {
+        "eyebrow": "WHAT WE STAND ON",
+        "heading": "Our Brand Promise",
+        "subheading": "The principles this formula was built on — and the ones HairScripts™ is accountable to.",
+        "button_text": "Start My Protocol",
+        "button_url": ""
+      }
+    },
+    "hairscripts_about_nine_pathways_LGmJ7w": {
+      "type": "hairscripts-about-nine-pathways",
+      "blocks": {
+        "pathway_ketnin": {
+          "type": "pathway",
+          "settings": {
+            "label": "Androgen / DHT activity"
+          }
+        },
+        "pathway_cnxRVF": {
+          "type": "pathway",
+          "settings": {
+            "label": "Stress & cortisol signaling"
+          }
+        },
+        "pathway_T6Nf4c": {
+          "type": "pathway",
+          "settings": {
+            "label": "Scalp inflammation"
+          }
+        },
+        "pathway_4ya8JX": {
+          "type": "pathway",
+          "settings": {
+            "label": "Scalp microcirculation"
+          }
+        },
+        "pathway_4k9hnG": {
+          "type": "pathway",
+          "settings": {
+            "label": "Nutrient depletion"
+          }
+        },
+        "pathway_mNtCbf": {
+          "type": "pathway",
+          "settings": {
+            "label": "Thyroid–follicle function"
+          }
+        },
+        "pathway_HipTrf": {
+          "type": "pathway",
+          "settings": {
+            "label": "Insulin resistance"
+          }
+        },
+        "pathway_Qarm3g": {
+          "type": "pathway",
+          "settings": {
+            "label": "Oxidative follicle damage"
+          }
+        },
+        "pathway_eyxHNH": {
+          "type": "pathway",
+          "settings": {
+            "label": "Structural strand integrity"
+          }
+        }
+      },
+      "block_order": [
+        "pathway_ketnin",
+        "pathway_cnxRVF",
+        "pathway_T6Nf4c",
+        "pathway_4ya8JX",
+        "pathway_4k9hnG",
+        "pathway_mNtCbf",
+        "pathway_HipTrf",
+        "pathway_Qarm3g",
+        "pathway_eyxHNH"
+      ],
+      "name": "About - Nine Pathways",
+      "settings": {
+        "image": "shopify://shop_images/image_2.png",
+        "eyebrow": "THE FORMULA",
+        "heading": "Nine Pathways. One Formula.",
+        "description": "HairScripts™ addresses every root cause of hormonal hair loss — simultaneously. So you’re covered at every level, from day one."
+      }
+    },
+    "about_quote_npgK7F": {
+      "type": "about-quote",
+      "name": "About - Quote Banner",
+      "settings": {
+        "quote": "\"You don't have to have all the answers yet. Your follicles just need to be supported while you find them.\"",
+        "body_text": "HairScripts™ was built for the woman who has tried things that didn’t work — not because she wasn’t consistent enough, but because the formula wasn’t built for her body. You don’t have to wait until you’ve identified your root cause to start supporting your follicles across all nine pathways. That’s the whole point of this formula. While you’re getting labs, doing the research, working it out — HairScripts™ is already working. You were never powerless. You just needed the right tool.",
+        "portrait": "shopify://shop_images/Bevy_Picture.png",
+        "attribution_name": "Bevy",
+        "attribution_title": "BEVY — Founder, HairScripts™ · Pharmaceutical Industry Expert · One of You",
+        "attribution_title_mobile": "BEVY — Founder, HairScripts™ <br>Pharmaceutical Industry Expert · One of You"
+      }
+    },
+    "hairscripts_about_join_community_FEbAVx": {
+      "type": "hairscripts-about-join-community",
+      "custom_css": [
+        "@media screen and (max-width: 749px) {.contact-form {width: 100% !important; }}"
+      ],
+      "name": "About - Join Community",
+      "settings": {
+        "image": "shopify://shop_images/image_1_a1fd4241-4afa-479b-b3f4-57cfafd4afb5.png",
+        "heading": "Get the Exact Labs I Tell Every Client to Request — Free.",
+        "description": "Drop your email and I’ll send you the complete lab panel guide — the specific tests that actually reveal what’s driving your hair loss, and the optimal ranges your doctor probably isn’t telling you about. Science only. No spam.",
+        "email_placeholder": "Enter your email address here",
+        "button_label": "Subscribe",
+        "success_message": "Thank you for subscribing!",
+        "disclaimer": "No spam. Science only. Unsubscribe any time."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hairscripts_about_hero_UeeWLF",
+    "hairscripts_about_founder_HkGzmj",
+    "hairscripts_about_brand_promise_DnqVVb",
+    "hairscripts_about_nine_pathways_LGmJ7w",
+    "about_quote_npgK7F",
+    "hairscripts_about_join_community_FEbAVx"
+  ]
+}

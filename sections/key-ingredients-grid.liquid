@@ -1,0 +1,474 @@
+<section
+  id="key-ingredients-grid-{{ section.id }}"
+  class="key-ingredients-grid-section"
+  style="
+    --kig-section-bg: {{ section.settings.section_bg }};
+    --kig-heading-color: {{ section.settings.heading_color }};
+    --kig-text-color: {{ section.settings.text_color }};
+    --kig-item-title-color: {{ section.settings.item_title_color }};
+    --kig-item-text-color: {{ section.settings.item_text_color }};
+    --kig-icon-bg: {{ section.settings.icon_bg }};
+    --kig-icon-color: {{ section.settings.icon_color }};
+    --kig-divider-color: {{ section.settings.divider_color }};
+  "
+>
+  <div class="key-ingredients-grid__wrap">
+    <div class="key-ingredients-grid__header">
+      {% if section.settings.eyebrow != blank %}
+        <div class="key-ingredients-grid__eyebrow">{{ section.settings.eyebrow }}</div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="key-ingredients-grid__title">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="key-ingredients-grid__description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="key-ingredients-grid__grid">
+        {% for block in section.blocks %}
+          <div class="key-ingredients-grid__item" {{ block.shopify_attributes }}>
+            <div class="key-ingredients-grid__icon-wrap">
+              {% if block.settings.icon != blank %}
+                <img
+                  src="{{ block.settings.icon | image_url: width: 120 }}"
+                  alt="{{ block.settings.title | escape }}"
+                  loading="lazy"
+                  width="{{ block.settings.icon.width }}"
+                  height="{{ block.settings.icon.height }}"
+                  class="key-ingredients-grid__icon-image"
+                >
+              {% else %}
+                <span class="key-ingredients-grid__icon-fallback">
+                  {{ block.settings.icon_symbol }}
+                </span>
+              {% endif %}
+            </div>
+
+            <div class="key-ingredients-grid__content">
+              {% if block.settings.title != blank %}
+                <h3 class="key-ingredients-grid__item-title">{{ block.settings.title }}</h3>
+              {% endif %}
+
+              {% if block.settings.text != blank %}
+                <div class="key-ingredients-grid__item-text">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <style>
+    #key-ingredients-grid-{{ section.id }} {
+      background: var(--kig-section-bg);
+      padding: 60px 40px;
+      box-sizing: border-box;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__wrap {
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__header {
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__eyebrow {
+      margin: 0 0 12px;
+      color: var(--kig-heading-color);
+      font-family: "DM Sans";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__title {
+      margin: 0 0 18px;
+      color: var(--kig-heading-color);
+      font-family: "Cormorant Garamond";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__description {
+      margin: 0 auto;
+      color: var(--kig-text-color);
+      font-family: "DM Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.45;
+      text-align: center;
+      max-width: 1100px;
+      width: auto;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__description p {
+      margin: 0;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 60px;
+      row-gap: 40px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      max-width: 900px;
+      width: auto;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      min-width: 0;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background:
+        linear-gradient(var(--kig-icon-bg), var(--kig-icon-bg)) padding-box,
+        linear-gradient(
+          90deg,
+          #ffffff 0%,
+          rgba(110, 52, 0, 0.15) 100%
+        ) border-box;
+      color: var(--kig-icon-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-sizing: border-box;
+      border: 1px solid transparent;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__icon-image {
+      display: block;
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__icon-fallback {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      font-size: 16px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__content {
+      min-width: 0;
+      padding-top: 0;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item-title {
+      margin: 0 0 6px;
+      color: var(--kig-item-title-color);
+      font-family: "DM Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item-text {
+      color: #fff;
+      font-family: "DM Sans";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.45;
+      opacity: 0.92;
+    }
+
+    #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item-text p {
+      margin: 0;
+    }
+
+    @media screen and (max-width: 989px) {
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__header {
+        margin-bottom: 42px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__grid {
+        column-gap: 36px;
+        row-gap: 24px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__description {
+        font-size: 16px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item-title {
+        font-size: 16px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item-text {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      #key-ingredients-grid-{{ section.id }} {
+        padding: 60px 15px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__header {
+        margin-bottom: 34px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__title {
+        font-size: 26px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__description {
+        font-size: 14px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__grid {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 14px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__icon-wrap {
+        width: 42px;
+        height: 42px;
+        border-width: 1px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__icon-image {
+        width: 22px;
+        height: 22px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item-title {
+        font-size: 16px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item-text {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__title {
+        font-size: 20px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__eyebrow {
+        font-size: 12px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item-title {
+        font-size: 15px;
+      }
+
+      #key-ingredients-grid-{{ section.id }} .key-ingredients-grid__item-text {
+        font-size: 14px;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Key ingredients grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "KEY INGREDIENTS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Key Ingredients"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section background",
+      "default": "#2f6665"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#f5efe4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Intro text color",
+      "default": "#d9e7e2"
+    },
+    {
+      "type": "color",
+      "id": "item_title_color",
+      "label": "Item title color",
+      "default": "#f5efe4"
+    },
+    {
+      "type": "color",
+      "id": "item_text_color",
+      "label": "Item text color",
+      "default": "#d9e7e2"
+    },
+    {
+      "type": "color",
+      "id": "icon_bg",
+      "label": "Icon circle background",
+      "default": "#f5efe4"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#2f6665"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#4e817f"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "icon_symbol",
+          "label": "Fallback icon symbol",
+          "default": "✦"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Ingredient title",
+          "default": "Ashwagandha Root Extract"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Ingredient text",
+          "default": "<p>Helps reduce stress-related hair loss by supporting cortisol balance.</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Key ingredients grid",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Ashwagandha Root Extract",
+            "text": "<p>Helps reduce stress-related hair loss by supporting cortisol balance.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Saw Palmetto Extract",
+            "text": "<p>Helps reduce DHT by supporting healthy hormone balance.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Hydrolyzed Marine Collagen",
+            "text": "<p>Supports skin elasticity, follicles, and hair structure.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Hyaluronic Acid",
+            "text": "<p>Helps hydrate the scalp and support elasticity.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Methylsulfonylmethane",
+            "text": "<p>Supports natural keratin production for stronger hair.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Coenzyme Q10 (CoQ10)",
+            "text": "<p>Supports cellular energy and healthier scalp function.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Zinc Bisglycinate Chelate",
+            "text": "<p>Supports growth, oil balance, and immune resilience.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Grape Seed Extract",
+            "text": "<p>Helps protect follicles through antioxidant support.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
